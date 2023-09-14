@@ -9,15 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 	$password = md5($_POST['password']);
 	$fullname = $_POST['fullname'];
 	$email = $_POST['email'];
-	// $filename = $_FILES['gambar']['name'];
-
-	// // JIKA SEMUANYA TIDAK KOSONG
-	// $filetmpname = $_FILES['gambar']['tmp_name'];
-
-	// // FOLDER DIMANA GAMBAR AKAN DI SIMPAN
-	// $folder = 'gambar_berita/';
-	// // GAMBAR DI SIMPAN KE DALAM FOLDER
-	// move_uploaded_file($filetmpname, $folder . $filename);
+	
 
 	$cek = "SELECT * FROM users WHERE username = '$username' AND email = '$email'";
 	$result = mysqli_fetch_array(mysqli_query($koneksi, $cek));
